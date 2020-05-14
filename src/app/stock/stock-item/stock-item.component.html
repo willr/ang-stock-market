@@ -1,0 +1,12 @@
+
+<div class="stock-container" >
+  <div class='button-holder' *ngIf='stock.favorite'> **</div>
+  <div class='button-holder' *ngIf='!stock.favorite'> <br/></div>
+  <div class="name">{{stock.name + ' (' + stock.code + ')'}}</div>
+  <div class="price" 
+    [ngClass]="stock.stockClasses">$ {{stock.price}}</div>
+      <button (click)='onToggleFavorite($event)'
+        *ngIf='!stock.favorite'>Favorite</button>
+      <button (click)='onToggleFavorite($event)'
+        *ngIf='stock.favorite'>Remove</button>
+</div>
